@@ -1,0 +1,22 @@
+<header>
+  <div class="avatar">
+    <img class="logo" src="assets/images/logo.png" alt="logo pic">
+    <p>Welcome {{userName}}</p>
+  </div>
+  <button theme="white" (click)="onLogout()">Logout</button>
+</header>
+
+<div class="search-bar-wrapper">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <input name="query" ngModel placeholder="Search for Books ..." type="text" />
+    <button theme="gray">Search</button>
+  </form>
+</div>
+
+<div class="gallery" *ngIf="!isLoading; else loading">
+  <app-book *ngFor="let book of books$ | async" [book]="book"></app-book>
+</div>
+<ng-template #loading>
+  <app-spinner></app-spinner>
+</ng-template>
+<!--<div>{{books$ | async | json}}</div>-->

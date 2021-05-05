@@ -1,0 +1,9 @@
+.book {
+  opacity: 0;
+  img {
+    width: 12rem;
+    height: 20rem;
+  }
+
+  animation: fadeIn .3s .2s ease-in forwards;
+}

@@ -1,0 +1,15 @@
+<div class="login">
+  <form #f="ngForm" (ngSubmit)="onLogin(f)">
+    <div class="row">
+      <input
+        autocomplete="off"
+        placeholder="Username"
+        name="username"
+        type="text"
+        ngModel
+      />
+      <span class="error" *ngIf="errorMessage">{{errorMessage}}</span>
+    </div>
+    <button type="submit">Login</button>
+  </form>
+</div>

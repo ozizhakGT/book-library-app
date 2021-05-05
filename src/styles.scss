@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+  font-family: 'Lato', sans-serif;
+  background-color: antiquewhite;
+}
+
+input {
+  font-size: 1.6rem;
+  padding: 5px;
+  border: .5px gray solid;
+  border-radius: 4px;
+  transition: all .3s;
+
+  &:focus {
+    border-color: cornflowerblue;
+    outline: none;
+  }
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 5px 20px;
+  font-size: 1.5rem;
+  background-color: cornflowerblue;
+  border-radius: 5px;
+  align-self: center;
+  transition: transform .2s;
+
+  &[theme="white"] {
+    background-color: antiquewhite;
+  }
+
+  &[theme="gray"] {
+    background-color: lightgray;
+  }
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  &:disabled {
+    opacity: .4;
+  }
+}
+
+.row {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.error {
+  opacity: 0;
+  font-size: 1.3rem;
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  color: red;
+
+  animation: fadeIn .3s forwards;
+}
+
+
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
